@@ -14,4 +14,9 @@
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator.Helpers\Calculator.Helpers.csproj" />
+    <ProjectReference Include="..\Calculator.Sms\Calculator.Sms.csproj" />
+  </ItemGroup>
+
 </Project>
