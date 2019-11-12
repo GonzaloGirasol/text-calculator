@@ -21,8 +21,9 @@ namespace Calculator.Tests.Sms
         public TotalCostCalculatorTests()
         {
             _accountDetails = A.Fake<IAccountDetails>();
-            A.CallTo(() =>
-                _accountDetails.GetAccountPriceBands(_customerAccount)).Returns(GetAccountPriceBands());
+
+            A.CallTo(() => _accountDetails.GetAccountPriceBands(_customerAccount))
+                .Returns(GetAccountPriceBands());
 
             _calculator = new TotalCostCalculator(_accountDetails);
         }
