@@ -53,7 +53,7 @@ namespace Calculator.Tests.Sms
         [InlineData(200)]
         public void CalculateCost_FirstBand_ShouldReturnExpected(int textMessages)
         {
-            // Assert
+            // Arrange
             var priceBands = GetAccountPriceBands().ToList();
             var priceBand = priceBands[0];
 
@@ -73,7 +73,7 @@ namespace Calculator.Tests.Sms
         [InlineData(500)]
         public void CalculateCost_SecondBand_ShouldReturnExpected(int textMessages)
         {
-            // Assert
+            // Arrange
             var priceBands = GetAccountPriceBands().ToList();
             var firstPriceBand = priceBands[0];
             var secondPriceBand = priceBands[1];
@@ -98,7 +98,7 @@ namespace Calculator.Tests.Sms
         [InlineData(1000)]
         public void CalculateCost_ThirdBand_ShouldReturnExpected(int textMessages)
         {
-            // Assert
+            // Arrange
             var priceBands = GetAccountPriceBands().ToList();
             var firstPriceBand = priceBands[0];
             var secondPriceBand = priceBands[1];
@@ -125,7 +125,7 @@ namespace Calculator.Tests.Sms
         [InlineData(int.MaxValue)]
         public void CalculateCost_FourthBand_ShouldReturnExpected(int textMessages)
         {
-            // Assert
+            // Arrange
             var priceBands = GetAccountPriceBands().ToList();
             var firstPriceBand = priceBands[0];
             var secondPriceBand = priceBands[1];
