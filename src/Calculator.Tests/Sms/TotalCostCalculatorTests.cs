@@ -29,6 +29,25 @@ namespace Calculator.Tests.Sms
         }
 
         [Theory]
+        [InlineData(0)]
+        [InlineData(-500)]
+        [InlineData(int.MinValue)]
+        public void CalculateCost_ZeroOrLess_ShouldReturnExpected(int textMessages)
+        {
+            // Arrange
+            const decimal expected = 0;
+
+            A.CallTo(() => _accountDetails.NumberOfTextMessagesSentInMonth(_customerAccount, Month, Year))
+                .Returns(textMessages);
+
+            // Act
+            var cost = _calculator.CalculateCost(_customerAccount, Month, Year);
+
+            // Assert
+            Assert.Equal(expected, cost);
+        }
+
+        [Theory]
         [InlineData(1)]
         [InlineData(100)]
         [InlineData(200)]
